@@ -3,6 +3,14 @@ const client = new Discord.Client();
 const prefix = `spam_`
 const commands = require(`./bin/commands`);
 var pathToFfmpeg = require('ffmpeg-static');
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send("I'm not dead! :D"));
+
+app.listen(port, () => console.log(`listening at http://localhost:${port}`));
+
 
 console.log(pathToFfmpeg);
 client.on('message', msg => {
